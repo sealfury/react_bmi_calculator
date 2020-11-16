@@ -1,12 +1,15 @@
 import React, { Component } from "react";
 import './App.css';
 import Form from "./components/Form";
+import Message from "./components/Message";
 import { calculateBmi } from "./helpers/bmiHelper";
 
 class App extends Component {
   state = {
     weight: "",
-    height: ""
+    height: "",
+    bmiValue: "",
+    bmiMessage: ""
   };
 
   onChangeHandler = e => this.setState({ [e.target.name]: e.target.value });
@@ -29,6 +32,12 @@ class App extends Component {
           onChangeHandler={this.onChangeHandler}
           onSubmitHandler={this.onSubmitHandler}
         /> 
+        {this.state.bmiValue && (
+          <Message 
+            bmiValue={this.state.bmiValue}
+            bmiMessage={this.state.bmiMessage}
+          />
+        )}
       </div>
     );
   }
