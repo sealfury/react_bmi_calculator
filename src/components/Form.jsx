@@ -1,8 +1,11 @@
 import React from "react";
 
+
 const Form = props => {
   return (
-    <form onSubmit={props.onSubmitHandler}>
+    
+      <form class="ui inverted form" onSubmit={props.onSubmitHandler}>
+      <br/>
       <label htmlFor="weight">Weight</label>
       <input 
         type="number"
@@ -17,7 +20,7 @@ const Form = props => {
       <input 
         type="number"
         required 
-        placeholder="Heigh in cm"
+        placeholder="Height in cm"
         value={props.height}
         name="height"
         id="height"
@@ -25,6 +28,7 @@ const Form = props => {
       />
       <button id='calculate'>Calculate BMI</button>
     </form>
+   
   );
 };
 

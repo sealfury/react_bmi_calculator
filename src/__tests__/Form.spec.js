@@ -6,12 +6,10 @@ import Form from "../components/Form";
 describe("Form", () => {
   const handleChange = jest.fn();
   const handleSubmit = jest.fn();
-  const handleSelect = jest.fn();
   const wrapper = shallow(
     <Form 
       weight="90"
       height="190"
-      onSelectHandler={handleSelect}
       onChangeHandler={handleChange}
       onSubmitHandler={handleSubmit}
     />
@@ -31,11 +29,6 @@ describe("Form", () => {
     wrapper.find("#height").simulate("change");
     expect(handleChange).toHaveBeenCalled();
   });
-
-  it("on select the onSelectHandler is being called", () => {
-    wrapper.find("#select-method").simulate("select");
-    expect(handleSelect).toHaveBeenCalled();
-  })
 
   it("on submit the onSubmitHandler is being called", () => {
     wrapper.find("form").simulate("submit");

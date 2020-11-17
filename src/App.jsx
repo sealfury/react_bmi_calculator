@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import './App.css';
 import Form from "./components/Form";
+import Selector from "./components/Selector";
 import Message from "./components/Message";
 import { calculateBmi } from "./helpers/bmiHelper";
 
@@ -26,6 +26,7 @@ class App extends Component {
   render() {
     return (
       <div>
+        <Selector/>
         <Form 
           weight={this.state.weight}
           height={this.state.height}
